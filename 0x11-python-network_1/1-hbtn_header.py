@@ -13,6 +13,6 @@ if __name__ == "__main__":
 
     """get the http headers from the response, using
        response.info()"""
-    headers = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+    with urllib.request.urlopen(url) as response:
+        headers = response.info()
+        print(headers.get('X-Request-Id'))
